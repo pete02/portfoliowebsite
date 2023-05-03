@@ -12,6 +12,7 @@ function Main({port,resume}:input) {
     return(
         <>
             <h1>Hi, I'm Petrik Räsänen</h1>
+            <p>petrik.rasanen@gmail.com</p>
             <div>
                 <a href="https://github.com/pete02" target="_blank">
                 <img src={git} className="logo"/>

@@ -12,6 +12,7 @@ interface cardData {
     img?: string;
     demo?: string;
     github?: string;
+    skills?:string;
   }
 
 interface input{
@@ -21,10 +22,10 @@ interface input{
 
 
 const projects:cardData[]= [
-    { title: 'Portfolio', content: "I built a portfolio website showcasing my skills and projects. The website features a modern design and a responsive layout that adapts to different screen sizes. Visitors can browse through my projects, read descriptions, view screenshots, and visit live demos or GitHub repositories. ", img:portfolio,demo:"https://google.com",github:"https://github.com/pete02/bookraider"  },
-    { title: 'Bookraider', content: "This website is a tool designed to make searching for and downloading audiobooks quick and easy. It searches popular audiobook websites for books that match the user's query and provides a list of results. Once a book is selected, the website will automatically download and process it for use on an audiobook player", img:bookraider,demo:"https://google.com",github:"https://github.com/pete02/bookraider"  },
-    { title: 'Novelsapi', content: "Website that automatically download. Users can browse a series of book covers and select specific volumes to download. The website includes links to the series' official website and several API endpoints for searching, saving, and modifying JSON files. ", img:novelsapi,demo:"https://google.com",github:"https://github.com/pete02/Novelsapi"  },
-    { title: 'Ardino Weather display', content: 'Arduino-based weather display that provides real-time and forecasted weather data. The display queries current weather data from my own server and future weather data from a weather server. ', img:display,demo:"",github:"https://github.com/pete02/Arduino/tree/master/display"  },
+    { skills:"Typescript, React, nodeJS",title: 'Portfolio', content: "I built a portfolio website showcasing my skills and projects. The website features a modern design and a responsive layout that adapts to different screen sizes. Visitors can browse through my projects, read descriptions, view screenshots, and visit live demos or GitHub repositories. ", img:portfolio ,github:"https://github.com/pete02/portfoliowebsite"  },
+    { skills:" React, nodeJS, selenium",title: 'Bookraider', content: "This website is a tool designed to make searching for and downloading audiobooks quick and easy. It searches popular audiobook websites for books that match the user's query and provides a list of results. Once a book is selected, the website will automatically download and process it for use on an audiobook player", img:bookraider,demo:"https://bookraider.petrikrasanen.duckdns.org/",github:"https://github.com/pete02/bookraider"  },
+    { skills:"React, nodeJS, selenium",title: 'Novelsapi', content: "Website that automatically download. Users can browse a series of book covers and select specific volumes to download. The website includes links to the series' official website and several API endpoints for searching, saving, and modifying JSON files. ", img:novelsapi,demo:"https://novel.petrikrasanen.duckdns.org/",github:"https://github.com/pete02/Novelsapi"  },
+    { skills:"Arduino, IndexDB",title: 'Ardino Weather display', content: 'Arduino-based weather display that provides real-time and forecasted weather data. The display queries current weather data from my own server and future weather data from a weather server. ', img:display,demo:"",github:"https://github.com/pete02/Arduino/tree/master/display"  },
 ];
 
 
@@ -62,7 +63,7 @@ function Port({main, resume}:input){
     <h2>Personal Projects</h2>
     <div className="mesh" style={{display:'grid'}}>
         {projects.map(card=>(
-            <CardBuilder title={card.title} content={card.content} img={card.img} demo={card.demo} github={card.github}/>
+            <CardBuilder skills={card.skills}title={card.title} content={card.content} img={card.img} demo={card.demo} github={card.github}/>
         ))}
     
         <div className="spacer" style={{ gridColumn: `span ${numColumns}` }}></div>
